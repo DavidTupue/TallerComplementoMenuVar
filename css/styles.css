@@ -89,3 +89,7 @@ body{
     background-color: #89216B; 
     color: #fff;
 }
+.navbar {
+  width: 100% !important;
+}
+

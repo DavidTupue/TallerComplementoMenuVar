@@ -1,59 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Formulario</title>
     <!-- bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
     <!-- css -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css" />
     <!-- tipo de letra -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- iconos de b -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-</head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- iconos de bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
 
-<body>
-    <div class="container my-5">
-        <div class="d-flex justify-content-center">
-            <div class="row justify-content-center">
-                <div class="col-sm-12 col-md-0 col-lg-12 col-xl-0 card-form">
+    <style>
+      body {
+        min-height: 100vh;
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(360deg, #da4453, #89216b);
+        display: flex;
+        flex-direction: column;
+      }
 
-                    <form>
-                        <div class=" mb-3 contenedor-icon-input">  <!--contenedor para colocar los iconos dentro de los inputs-->
-                            <span class="bi bi-person-circle icono"></span> <!--icono es la clase para poder invocar los iconos desde css y modificarlos en estilo-->
-                            <input type="text" class="form-control input-con-icon" id="nombre" placeholder="Nombre" autofocus /><!-- input-con-icon es la clase que coloca al icono sobre el texto-->
-                        </div>
+      /* contenedor principal debajo del navbar */
+      .main-content {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px; /* espacio debajo de la navbar */
+      }
+    </style>
+  </head>
 
-                        <div class="mb-3 contenedor-icon-input">
-                            <span class="bi bi-lock-fill icono"></span>
-                            <input type="password" class="form-control input-con-icon" id="contraseña" placeholder="Contraseña" autofocus />
-                            
-                        </div>
-                        <div class="mb-3 contenedor-icon-input">
-                            <span class="bi bi-envelope-fill icono"></span>
-                            <input type="text" class="form-control input-con-icon" id="correo" placeholder="Correo" autofocus />
-                        </div>
-                        <div class="mb-3 contenedor-icon-input">
-                            <input type="text" class="form-control input-con-icon" id="telefono" placeholder="Teléfono" autofocus />
-                            <span class="bi bi-telephone-fill icono"></span>
-                        </div>
+  <body>
+    <!-- NAVBAR EN BLANCO BOOTSTRAP -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+        <i class="bi bi-cup-hot"></i>
+        </a>
 
-                        <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Acepto los Términos y
-                                Condiciones</label>
-                        </div>
-                        <div class="d-grid gap-2">
-                            <button class="btn btn-success">Registrarse</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sobre mi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Portafolio</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Productos
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Categoria 1</a></li>
+                <li><a class="dropdown-item" href="#">Categoria 2</a></li>
+                <li><a class="dropdown-item" href="#">Categoria 3</a></li>
+                  
+              </ul>
+              <li class="nav-item">
+              <a class="nav-link" href="#">Contacto</a>
+            </li>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
         </div>
+      </div>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL CENTRADO -->
+    <div class="main-content">
+      <div class="card-form p-4 rounded-3 shadow-lg">
+        <form>
+          <div class="mb-3 contenedor-icon-input">
+            <span class="bi bi-person-circle icono"></span>
+            <input
+              type="text"
+              class="form-control input-con-icon"
+              id="nombre"
+              placeholder="Nombre"
+              autofocus
+            />
+          </div>
+
+          <div class="mb-3 contenedor-icon-input">
+            <span class="bi bi-lock-fill icono"></span>
+            <input
+              type="password"
+              class="form-control input-con-icon"
+              id="contraseña"
+              placeholder="Contraseña"
+              autofocus
+            />
+          </div>
+
+          <div class="mb-3 contenedor-icon-input">
+            <span class="bi bi-envelope-fill icono"></span>
+            <input
+              type="text"
+              class="form-control input-con-icon"
+              id="correo"
+              placeholder="Correo"
+              autofocus
+            />
+          </div>
+
+          <div class="mb-3 contenedor-icon-input">
+            <input
+              type="text"
+              class="form-control input-con-icon"
+              id="telefono"
+              placeholder="Teléfono"
+              autofocus
+            />
+            <span class="bi bi-telephone-fill icono"></span>
+          </div>
+
+          <div class="mb-3 form-check">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              id="exampleCheck1"
+            />
+            <label class="form-check-label" for="exampleCheck1">
+              Acepto los Términos y Condiciones
+            </label>
+          </div>
+
+          <div class="d-grid gap-2">
+            <button class="btn btn-success">Registrarse</button>
+          </div>
+        </form>
+      </div>
     </div>
-</body>
+
+    <!-- JS Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
